@@ -1,4 +1,5 @@
 const { default: reducer } = require('./townsReducer');
+const { setTowns } = require('../actions/townsActions');
 
 describe('towns reducer', () => {
   it('handles the set towns action', () => {
