@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Town from './Town';
 
-
 describe('Town component', () => {
   it('renders Town', () => {
     const wrapper = shallow(<Town 
