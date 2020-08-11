@@ -15,8 +15,9 @@ const TownsPage = () => {
   }, []);
 
   return (
-    
-    <Towns />
+    <>
+      <Towns />
+    </>
   );
 };
 

@@ -1,16 +1,6 @@
-import { SET_TOWNS, CREATE_TOWN } from '../actions/townsActions';
+import { SET_TOWNS, CREATE_TOWN, DELETE_TOWN, UPDATE_TOWN } from '../actions/townsActions';
 
 export const initialState = {
-  //saved towns and edited town
-  createTown: {
-    name: '',
-    food: 1,
-    law: 1,
-    population: 1,
-    production: 1,
-    traffic: 1,
-    location: ''
-  },
   savedTowns: []
 };
 
@@ -19,9 +9,21 @@ export default function reducer(state, action) {
     case SET_TOWNS:
       return { ...state, savedTowns: action.payload };
     case CREATE_TOWN:
-      return { savedTowns: [
-        ...state.savedTowns, action.payload
-      ] };
+      return { 
+        savedTowns: [
+          ...state.savedTowns, action.payload
+        ] 
+      };
+    case DELETE_TOWN:
+      return {
+        savedTowns: 
+        state.savedTowns.filter(town => town._id !== action.payload)
+      };
+    case UPDATE_TOWN:
+      return {
+        savedTowns: 
+        [...state.savedTowns.filter(town => town._id !== action.payload.id), action.payload.data]
+      };
     default:
       return state;
   }
