@@ -1,0 +1,26 @@
+import React from 'react';
+import { shallow } from 'enzyme';
+import Town from './Town';
+import Towns from './Towns';
+
+describe('Towns component', () => {
+  let wrapper;
+  beforeEach(() => {
+    const towns = [
+      { 
+        name: 'Drexlor',
+        food: 4,
+        law: 3,
+        population: 3,
+        production: 4,
+        traffic: 2,
+        location: 'river'
+      }
+    ];
+    wrapper = shallow(<Towns towns={towns} />);
+  });
+
+  it('renders Towns', () => {
+    expect(wrapper.find(Town)).toHaveLength(1);
+  });
+});

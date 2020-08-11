@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Town component renders Town 1`] = `
+<section>
+  <p>
+    Drexlor
+  </p>
+  <p>
+    4
+  </p>
+  <p>
+    3
+  </p>
+  <p>
+    3
+  </p>
+  <p>
+    4
+  </p>
+  <p>
+    2
+  </p>
+  <p>
+    river
+  </p>
+</section>
+`;
